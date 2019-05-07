@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{22bb66db-6cf9-40f1-b651-120ee06e9628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{c187443a-9169-4ad5-a6cc-a2155aa367ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{ac4dc12e-3928-4f19-b76d-d0bb67aa541c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XML">
+      <UniqueIdentifier>{0b246953-51d7-4a13-967e-6bafa804b86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behavior Tree">
+      <UniqueIdentifier>{84ea774b-7a22-4a98-bd1a-96f24711eb83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behavior Tree">
+      <UniqueIdentifier>{e2305017-8a74-476f-b98a-f2180747015b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\ObjectFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Library.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\tinyxml2\tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BehaviorComponent1.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BehaviorComponent2.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BodyComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Components.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SpriteComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TimeDestructComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PhysicsDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ContactListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RayCast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BehaviorTree.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BranchTask.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LeafTask.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Selector.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sequence.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Task.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stop.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Chase.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shoot.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Patrol.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EnemyVisible.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InRange.cpp">
+      <Filter>Source Files\Behavior Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AudioDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Library.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ObjectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\tinyxml2\tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\InputDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\View.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GraphicsDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BehaviorComponent1.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BehaviorComponent2.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BodyComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Components.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SpriteComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\InputComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TimeDestructComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PhysicsDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContactListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RayCast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BehaviorTree.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BranchTask.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LeafTask.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Selector.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Sequence.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Task.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Chase.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Stop.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Patrol.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shoot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\InRange.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EnemyVisible.h">
+      <Filter>Header Files\Behavior Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AudioDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Assets\levelOne.xml">
+      <Filter>Source Files\XML</Filter>
+    </Xml>
+    <Xml Include="Assets\Assets.xml">
+      <Filter>Source Files\XML</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

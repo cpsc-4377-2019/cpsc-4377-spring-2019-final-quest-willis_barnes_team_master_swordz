@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sprites>
+	<Sprite name="player" path="./Assets/Visual/link.bmp"/>
+	<Sprite name="octorok" path="./Assets/Visual/octorok.bmp"/>
+	<Sprite name="moblin" path="./Assets/Visual/moblin.bmp"/>
+	<Sprite name="tree" path="./Assets/Visual/tree.bmp"/>
+	<Sprite name="wall" path="./Assets/Visual/wall.bmp"/>
+  <Sprite name="arrow" path="./Assets/Visual/arrow.bmp"/>
+  <Sprite name="sword" path="./Assets/Visual/sword.bmp"/>
+  <Sprite name="rock" path="./Assets/Visual/rock.bmp"/>
+</Sprites>

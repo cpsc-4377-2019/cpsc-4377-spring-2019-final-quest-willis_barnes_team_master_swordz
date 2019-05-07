@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level>
+    <Object type="player">
+        <Body x="6.6599998" y="6.6599998" angle="6.6599998"/>
+    </Object>
+    <Object type="octorok">
+        <Body x="6.6599998" y="6.6599998" angle="6.6599998"/>
+    </Object>
+    <Object type="moblin">
+        <Body x="6.6599998" y="6.6599998" angle="6.6599998"/>
+    </Object>
+</Level>
