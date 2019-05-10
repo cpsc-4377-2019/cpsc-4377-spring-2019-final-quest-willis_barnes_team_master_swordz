@@ -45,6 +45,7 @@
     <ClCompile Include="Source\Selector.cpp" />
     <ClCompile Include="Source\Sequence.cpp" />
     <ClCompile Include="Source\Shoot.cpp" />
+    <ClCompile Include="Source\Sound.cpp" />
     <ClCompile Include="Source\SpriteComponent.cpp" />
     <ClCompile Include="Source\Stop.cpp" />
     <ClCompile Include="Source\Task.cpp" />
@@ -81,6 +82,7 @@
     <ClInclude Include="Source\Selector.h" />
     <ClInclude Include="Source\Sequence.h" />
     <ClInclude Include="Source\Shoot.h" />
+    <ClInclude Include="Source\Sound.h" />
     <ClInclude Include="Source\SpriteComponent.h" />
     <ClInclude Include="Source\Stop.h" />
     <ClInclude Include="Source\Task.h" />
@@ -148,8 +150,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(ProjectDir)Game\</OutDir>
     <IntDir>$(ProjectDir)Temp\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)ThirdParty\SDL2\include;$(ProjectDir)ThirdParty\tinyxml2;$(ProjectDir)ThirdParty\SDL2_image\include;$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\include;$(ProjectDir)ThirdParty\Box2D-master;$(ProjectDir)ThirdParty\Box2D-master\Box2D</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(ProjectDir)ThirdParty\SDL2_image\lib\x86;$(ProjectDir)ThirdParty\SDL2\lib\x86;$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)ThirdParty\Box2D-master\Box2D\lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)ThirdParty\SDL2\include;$(ProjectDir)ThirdParty\tinyxml2;$(ProjectDir)ThirdParty\SDL2_image\include;$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\include;$(ProjectDir)ThirdParty\Box2D-master;$(ProjectDir)ThirdParty\Box2D-master\Box2D;$(ProjectDir)ThirdParty\SDL2_mixer\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(ProjectDir)ThirdParty\SDL2_image\lib\x86;$(ProjectDir)ThirdParty\SDL2\lib\x86;$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)ThirdParty\Box2D-master\Box2D\lib;$(ProjectDir)ThirdParty\SDL2_mixer\lib\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -164,14 +166,15 @@
 move "$(ProjectDir)*.dll" "$(ProjectDir)Game"</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;Box2D.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;Box2D.lib;SDL2_mixer.lib</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
     <PreBuildEvent>
       <Command>copy "$(ProjectDir)ThirdParty\SDL2\lib\x86\*.dll" "$(ProjectDir)";
 copy "$(ProjectDir)ThirdParty\SDL2_image\lib\x86\*.dll" "$(ProjectDir)"
-copy "$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\lib\x86\*.dll" "$(ProjectDir)"</Command>
+copy "$(ProjectDir)ThirdParty\SDL2_ttf-2.0.15\lib\x86\*.dll" "$(ProjectDir)"
+copy "$(ProjectDir)ThirdParty\SDL2_mixer\lib\x86\*.dll" "$(ProjectDir)"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

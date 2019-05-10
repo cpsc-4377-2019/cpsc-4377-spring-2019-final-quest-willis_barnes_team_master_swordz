@@ -14,6 +14,8 @@
 #include "BodyComponent.h"
 #include "TimeDestructComponent.h"
 #include "PhysicsDevice.h"
+#include "AudioDevice.h"
+#include "Sound.h"
 
 Engine::Engine() {
 
@@ -39,8 +41,13 @@ Engine::Engine() {
 		exit(1);
 	}
 
+	aDevice = std::make_unique<AudioDevice>();
+	if (!aDevice) {
+		printf("Audio Device could not initialize! SDL_Error: %s\n", SDL_GetError());
+	}
+
 	// Construct library and load first level
-	gameLibrary = std::make_unique<Library>(gDevice.get(), iDevice.get(), pDevice.get());
+	gameLibrary = std::make_unique<Library>(gDevice.get(), iDevice.get(), pDevice.get(), aDevice.get());
 	loadLevel("Assets/levelOne.xml");
 }
 
@@ -51,6 +58,7 @@ Engine::~Engine() {
 	pDevice = nullptr;
 	iDevice = nullptr;
 	pDevice = nullptr;
+	aDevice = nullptr;
 	view = nullptr;
 	timer = nullptr;
 }
@@ -70,6 +78,8 @@ void Engine::loadLevel(std::string levelPath) {
 	if (!root) {
 		printf("Error");
 	}
+	
+	aDevice->setAsBackground(gameLibrary->musicLibrary[root->FirstChildElement("Song")->Attribute("name")].get());
 
 	// Populate object vector with objects based on the level XML file
 	std::unique_ptr<ObjectFactory> factory = std::make_unique<ObjectFactory>();
@@ -164,7 +174,7 @@ void Engine::draw() {
 
 // The game loop - this runs until the player quits
 bool Engine::run() {
-	
+
 	// Check if the player has quit
 	if (iDevice->keyStates[InputDevice::UserInputs::QUIT]) {
 		return false;

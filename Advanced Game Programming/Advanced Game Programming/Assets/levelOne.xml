@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Level>
+  <Song name="overworld"/>
   <Object type="player">
     <Component type="sprite" name="player"/>
     <Component type="body" x="200" y="200" angle="0" bodytype="2"/>

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "InputComponent.h"
 #include "InputDevice.h"
 #include "Object.h"
@@ -8,11 +9,11 @@
 #include "BehaviorComponent2.h"
 #include "TimeDestructComponent.h"
 #include "PhysicsDevice.h"
-#include <iostream>
-
+#include "AudioDevice.h"
+#include "Sound.h"
 
 // Arguments: owner object, library, associated body component
-InputComponent::InputComponent(Object* owner, Library* library, BodyComponent* body):
+InputComponent::InputComponent(Object* owner, Library* library, BodyComponent* body) :
 	Components(owner),
 	library(library),
 	body(body) {
@@ -101,6 +102,7 @@ std::unique_ptr<Object> InputComponent::update() {
 			bullet->getComponent<SpriteComponent>()->spriteBody = bullet->getComponent<BodyComponent>();
 			bullet->addComponent(new BehaviorComponent2(bullet.get(), bullet->getComponent<BodyComponent>(), direction));
 			bullet->addComponent(new TimeDestructComponent(bullet.get(), 100));
+			library->aDevice->playSound(library->SFXLibrary["sword_swing"].get());
 		}
 	}
 

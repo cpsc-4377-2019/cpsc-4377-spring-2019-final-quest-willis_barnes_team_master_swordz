@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Sprites>
-	<Sprite name="player" path="./Assets/Visual/link.bmp"/>
-	<Sprite name="octorok" path="./Assets/Visual/octorok.bmp"/>
-	<Sprite name="moblin" path="./Assets/Visual/moblin.bmp"/>
-	<Sprite name="tree" path="./Assets/Visual/tree.bmp"/>
-	<Sprite name="wall" path="./Assets/Visual/wall.bmp"/>
-  <Sprite name="arrow" path="./Assets/Visual/arrow.bmp"/>
-  <Sprite name="sword" path="./Assets/Visual/sword.bmp"/>
-  <Sprite name="rock" path="./Assets/Visual/rock.bmp"/>
-</Sprites>
+<Assets>
+  <Sprites>
+    <Sprite name="player" path="./Assets/Visual/link.bmp"/>
+    <Sprite name="octorok" path="./Assets/Visual/octorok.bmp"/>
+    <Sprite name="moblin" path="./Assets/Visual/moblin.bmp"/>
+    <Sprite name="tree" path="./Assets/Visual/tree.bmp"/>
+    <Sprite name="wall" path="./Assets/Visual/wall.bmp"/>
+    <Sprite name="arrow" path="./Assets/Visual/arrow.bmp"/>
+    <Sprite name="sword" path="./Assets/Visual/sword.bmp"/>
+    <Sprite name="rock" path="./Assets/Visual/rock.bmp"/>
+  </Sprites>
+  <Sounds>
+    <Sound name="enemy_death" path="./Assets/Audio/enemy_death.wav"/>
+    <Sound name="player_death" path="./Assets/Audio/player_death.wav"/>
+    <Sound name="player_hurt" path="./Assets/Audio/player_hurt.wav"/>
+    <Sound name="sword_swing" path="./Assets/Audio/sword_swing.wav"/>
+    <Sound name="player_death" path="./Assets/Audio/player_death.wav"/>
+  </Sounds>
+  <Songs>
+    <Song name="overworld" path="./Assets/Audio/overworld.mp3"/>
+    <Song name="dungeon" path="./Assets/Aduio/dungeon.mp3"/>
+  </Songs>
+</Assets>

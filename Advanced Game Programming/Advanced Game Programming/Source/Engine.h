@@ -14,6 +14,7 @@ class GraphicsDevice;
 class InputDevice;
 class View;
 class PhysicsDevice;
+class AudioDevice;
 
 class Engine {
 public:
@@ -29,6 +30,7 @@ public:
 	std::unique_ptr<GraphicsDevice> gDevice{ nullptr };
 	std::unique_ptr<InputDevice> iDevice{ nullptr };
 	std::unique_ptr<PhysicsDevice> pDevice{ nullptr };
+	std::unique_ptr<AudioDevice> aDevice{ nullptr };
 	std::unique_ptr<Library> gameLibrary{ nullptr };
 	std::unique_ptr<Timer> timer{ nullptr };
 	std::shared_ptr<View> view;
