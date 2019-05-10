@@ -18,7 +18,7 @@
 #include "Sound.h"
 
 Engine::Engine() {
-
+	factory = std::make_unique<ObjectFactory>();
 	// Construct and initialize graphics device
 	gDevice = std::make_unique<GraphicsDevice>(800, 600);
 	if (!gDevice->Initialize(true)) {
@@ -49,6 +49,7 @@ Engine::Engine() {
 	// Construct library and load first level
 	gameLibrary = std::make_unique<Library>(gDevice.get(), iDevice.get(), pDevice.get(), aDevice.get());
 	loadLevel("Assets/levelOne.xml");
+
 }
 
 Engine::~Engine() {
@@ -67,6 +68,7 @@ Engine::~Engine() {
 void Engine::loadLevel(std::string levelPath) {
 	tinyxml2::XMLDocument doc;
 
+	factory->resetEnemyCount();
 	// Load level XML file
 	if (doc.LoadFile(levelPath.c_str()) != tinyxml2::XML_SUCCESS) {
 		printf("Bad File Path");
@@ -82,11 +84,11 @@ void Engine::loadLevel(std::string levelPath) {
 	aDevice->setAsBackground(gameLibrary->musicLibrary[root->FirstChildElement("Song")->Attribute("name")].get());
 
 	// Populate object vector with objects based on the level XML file
-	std::unique_ptr<ObjectFactory> factory = std::make_unique<ObjectFactory>();
 	for (tinyxml2::XMLElement* element = root->FirstChildElement("Object"); element; element = element->NextSiblingElement("Object")) {
 		gameLibrary->objects.push_back(factory->create(element, gameLibrary.get()));
 	}
-
+	levelSwitchThreshold = gameLibrary->objects.size() - factory->getEnemyCount();
+	std::cout << levelSwitchThreshold;
 }
 
 // Save level to XML (Argument: path to XML file)
@@ -134,6 +136,12 @@ void Engine::update() {
 		}
 	}
 	tempObjects.erase(tempObjects.begin(), tempObjects.end());
+
+	if (gameLibrary->objects.size() <= levelSwitchThreshold) {
+		gameLibrary->objects.clear();
+		loadLevel("Assets/levelTwo.xml");
+		std::cout << "Loading level 2";
+	}
 
 	// Update each object in vector. Add new objects to tempObjects vector to be added
 	// to object vector in next cycle

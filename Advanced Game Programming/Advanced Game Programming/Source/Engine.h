@@ -15,6 +15,7 @@ class InputDevice;
 class View;
 class PhysicsDevice;
 class AudioDevice;
+class ObjectFactory;
 
 class Engine {
 public:
@@ -27,6 +28,7 @@ public:
 	bool run();
 	void reset();
 
+	std::unique_ptr<ObjectFactory> factory{ nullptr };
 	std::unique_ptr<GraphicsDevice> gDevice{ nullptr };
 	std::unique_ptr<InputDevice> iDevice{ nullptr };
 	std::unique_ptr<PhysicsDevice> pDevice{ nullptr };
@@ -35,6 +37,9 @@ public:
 	std::unique_ptr<Timer> timer{ nullptr };
 	std::shared_ptr<View> view;
 	std::vector<std::unique_ptr<Object>> tempObjects;
+
+private:
+	int levelSwitchThreshold;
 };
 
 #endif

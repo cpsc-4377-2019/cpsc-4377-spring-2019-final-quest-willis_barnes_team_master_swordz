@@ -59,7 +59,5 @@ void Library::addObject(std::unique_ptr<Object>) {
 
 std::vector<Object*> Library::getObjects(ObjectType type) {
 	std::vector<Object*> objectGet;
-
-
 	return objectGet;
 }

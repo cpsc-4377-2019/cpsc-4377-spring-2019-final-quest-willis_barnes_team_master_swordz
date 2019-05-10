@@ -95,6 +95,7 @@
   <ItemGroup>
     <Xml Include="Assets\Assets.xml" />
     <Xml Include="Assets\levelOne.xml" />
+    <Xml Include="Assets\levelTwo.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
