@@ -9,7 +9,7 @@
 #include "Definitions.h"
 
 ObjectFactory::ObjectFactory(){
-
+	enemyCount = 0;
 }
 
 ObjectFactory::~ObjectFactory(){
@@ -62,6 +62,7 @@ std::unique_ptr<Object> ObjectFactory::create(tinyxml2::XMLElement* element, Lib
 	}
 	else if (objectType == "moblin" || objectType == "octorok") {
 		newObject->setType(ObjectType::enemy);
+		enemyCount++;
 	}
 
 	for (tinyxml2::XMLElement* componentElement = element->FirstChildElement(); componentElement; componentElement = componentElement->NextSiblingElement()) {
@@ -84,4 +85,12 @@ std::unique_ptr<Object> ObjectFactory::create(tinyxml2::XMLElement* element, Lib
 	}
 
 	return newObject;
+}
+
+int ObjectFactory::getEnemyCount() {
+	return enemyCount;
+}
+
+void ObjectFactory::resetEnemyCount() {
+	enemyCount = 0;
 }

@@ -23,6 +23,12 @@ public:
 
 	BodyComponent* createBodyComponent(Object*, tinyxml2::XMLElement*, Library*, SpriteComponent*);
 	SpriteComponent* createSpriteComponent(Object*, tinyxml2::XMLElement*, Library*);
+
+	int getEnemyCount();
+	void resetEnemyCount();
+
+private:
+	int enemyCount;
 };
 
 #endif

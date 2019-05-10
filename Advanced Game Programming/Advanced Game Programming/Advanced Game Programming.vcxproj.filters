@@ -239,5 +239,8 @@
     <Xml Include="Assets\Assets.xml">
       <Filter>Source Files\XML</Filter>
     </Xml>
+    <Xml Include="Assets\levelTwo.xml">
+      <Filter>Source Files\XML</Filter>
+    </Xml>
   </ItemGroup>
 </Project>
