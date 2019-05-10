@@ -68,7 +68,7 @@ Engine::~Engine() {
 void Engine::loadLevel(std::string levelPath) {
 	tinyxml2::XMLDocument doc;
 
-	factory->resetEnemyCount();
+	//factory->resetEnemyCount();
 	// Load level XML file
 	if (doc.LoadFile(levelPath.c_str()) != tinyxml2::XML_SUCCESS) {
 		printf("Bad File Path");
@@ -87,8 +87,9 @@ void Engine::loadLevel(std::string levelPath) {
 	for (tinyxml2::XMLElement* element = root->FirstChildElement("Object"); element; element = element->NextSiblingElement("Object")) {
 		gameLibrary->objects.push_back(factory->create(element, gameLibrary.get()));
 	}
-	levelSwitchThreshold = gameLibrary->objects.size() - factory->getEnemyCount();
-	std::cout << levelSwitchThreshold;
+	
+	//levelSwitchThreshold = gameLibrary->objects.size() - factory->getEnemyCount();
+	//std::cout << levelSwitchThreshold;
 }
 
 // Save level to XML (Argument: path to XML file)
@@ -137,15 +138,17 @@ void Engine::update() {
 	}
 	tempObjects.erase(tempObjects.begin(), tempObjects.end());
 
-	if (gameLibrary->objects.size() <= levelSwitchThreshold) {
-		gameLibrary->objects.clear();
-		loadLevel("Assets/levelTwo.xml");
-		std::cout << "Loading level 2";
-	}
+	int enemyCount = 0;
 
 	// Update each object in vector. Add new objects to tempObjects vector to be added
 	// to object vector in next cycle
 	for (auto object = gameLibrary->objects.begin(); object != gameLibrary->objects.end();) {
+		if (*object) {
+			if ((*object)->getType() == ObjectType::enemy) {
+				enemyCount++;
+			}
+		}
+		
 		if (auto temp = (*object)->update(); temp != nullptr) {
 			tempObjects.push_back(std::move(temp));
 		}
@@ -164,13 +167,19 @@ void Engine::update() {
 		else {
 			object++;
 		}
-
 	}
+
 	pDevice->update(1.0f / 60.0f);
 	//Update view based on player position
 	Position pos = gameLibrary->objects[0]->getComponent<BodyComponent>()->getPosition();
 	view->Update(pos);
 	gDevice->setView(view);
+
+	if (enemyCount == 0) {
+		gameLibrary->objects.clear();
+		loadLevel("Assets/levelTwo.xml");
+		std::cout << "Loading level 2";
+	}
 }
 
 // Draw the new position of each object to the screen

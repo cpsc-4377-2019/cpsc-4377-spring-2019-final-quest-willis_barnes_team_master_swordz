@@ -62,7 +62,7 @@ std::unique_ptr<Object> ObjectFactory::create(tinyxml2::XMLElement* element, Lib
 	}
 	else if (objectType == "moblin" || objectType == "octorok") {
 		newObject->setType(ObjectType::enemy);
-		enemyCount++;
+		//enemyCount++;
 	}
 
 	for (tinyxml2::XMLElement* componentElement = element->FirstChildElement(); componentElement; componentElement = componentElement->NextSiblingElement()) {
