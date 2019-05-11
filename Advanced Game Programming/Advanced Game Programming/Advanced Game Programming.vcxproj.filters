@@ -130,6 +130,9 @@
     <ClCompile Include="Source\Sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HealthComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine.h">
@@ -236,6 +239,9 @@
     </ClInclude>
     <ClInclude Include="Source\Sound.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HealthComponent.h">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

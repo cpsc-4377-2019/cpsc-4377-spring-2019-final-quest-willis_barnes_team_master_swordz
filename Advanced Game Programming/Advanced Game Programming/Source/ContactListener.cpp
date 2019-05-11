@@ -3,6 +3,7 @@
 #include "Components.h"
 #include "Library.h"
 #include "BodyComponent.h"
+#include "HealthComponent.h"
 
 void ContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
 {
@@ -30,5 +31,13 @@ void ContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold
 	if (objectB->getOwner()->getType() == ObjectType::bullet &&
 		objectA->getOwner()->getType() == ObjectType::enemy) {
 		objectA->getOwner()->setIsDead(true);
+	}
+	if (objectA->getOwner()->getType() == ObjectType::arrow &&
+		objectB->getOwner()->getType() == ObjectType::player) {
+		objectB->getOwner()->getComponent<HealthComponent>()->takeHit();
+	}
+	if (objectA->getOwner()->getType() == ObjectType::player &&
+		objectB->getOwner()->getType() == ObjectType::arrow) {
+		objectA->getOwner()->getComponent<HealthComponent>()->takeHit();
 	}
 }

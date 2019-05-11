@@ -31,6 +31,7 @@
     <ClCompile Include="Source\EnemyVisible.cpp" />
     <ClCompile Include="Source\Engine.cpp" />
     <ClCompile Include="Source\GraphicsDevice.cpp" />
+    <ClCompile Include="Source\HealthComponent.cpp" />
     <ClCompile Include="Source\InputComponent.cpp" />
     <ClCompile Include="Source\InputDevice.cpp" />
     <ClCompile Include="Source\InRange.cpp" />
@@ -69,6 +70,7 @@
     <ClInclude Include="Source\EnemyVisible.h" />
     <ClInclude Include="Source\Engine.h" />
     <ClInclude Include="Source\GraphicsDevice.h" />
+    <ClInclude Include="Source\HealthComponent.h" />
     <ClInclude Include="Source\InputComponent.h" />
     <ClInclude Include="Source\InputDevice.h" />
     <ClInclude Include="Source\InRange.h" />

@@ -6,6 +6,7 @@
 #include "Library.h"
 #include "BehaviorComponent1.h"
 #include "BehaviorComponent2.h"
+#include "HealthComponent.h"
 #include "Definitions.h"
 
 ObjectFactory::ObjectFactory(){
@@ -81,6 +82,9 @@ std::unique_ptr<Object> ObjectFactory::create(tinyxml2::XMLElement* element, Lib
 		}
 		if (componentName == "behavior1") {
 			newObject->addComponent(new BehaviorComponent1(newObject.get(), newObject->getComponent<BodyComponent>()));
+		}
+		if (componentName == "health") {
+			newObject->addComponent(new HealthComponent(newObject.get()));
 		}
 	}
 
