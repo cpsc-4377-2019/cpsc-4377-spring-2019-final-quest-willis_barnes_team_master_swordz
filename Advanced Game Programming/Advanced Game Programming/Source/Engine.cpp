@@ -18,6 +18,8 @@
 #include "Sound.h"
 
 Engine::Engine() {
+	levelCount = 1;
+	levelTotal = 2;
 	factory = std::make_unique<ObjectFactory>();
 	// Construct and initialize graphics device
 	gDevice = std::make_unique<GraphicsDevice>(800, 600);
@@ -48,7 +50,7 @@ Engine::Engine() {
 
 	// Construct library and load first level
 	gameLibrary = std::make_unique<Library>(gDevice.get(), iDevice.get(), pDevice.get(), aDevice.get());
-	loadLevel("Assets/levelOne.xml");
+	loadLevel("Assets/Levels/1.xml");
 
 }
 
@@ -206,10 +208,15 @@ bool Engine::run() {
 	gDevice->Present();
 
 	if (enemyCount == 0) {
-		pDevice->resetWorld();
-		gameLibrary->objects.clear();
-		loadLevel("Assets/levelTwo.xml");
-		std::cout << "Loading level 2";
+		if (levelCount < levelTotal) {
+			levelCount++;
+			pDevice->resetWorld();
+			gameLibrary->objects.clear();
+			std::string levelString = "Assets/Levels/" + std::to_string(levelCount) + ".xml";
+			loadLevel(levelString);
+			std::cout << "Loading level " << levelCount << std::endl;
+		}
+		
 	}
 
 	return true;

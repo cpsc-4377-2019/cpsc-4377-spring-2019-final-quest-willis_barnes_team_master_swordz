@@ -40,6 +40,8 @@ public:
 
 private:
 	int enemyCount;
+	int levelCount;
+	int levelTotal;
 };
 
 #endif

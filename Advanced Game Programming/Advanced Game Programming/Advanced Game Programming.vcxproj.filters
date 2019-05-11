@@ -239,13 +239,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\levelOne.xml">
-      <Filter>Source Files\XML</Filter>
-    </Xml>
     <Xml Include="Assets\Assets.xml">
       <Filter>Source Files\XML</Filter>
     </Xml>
-    <Xml Include="Assets\levelTwo.xml">
+    <Xml Include="Assets\Levels\1.xml">
+      <Filter>Source Files\XML</Filter>
+    </Xml>
+    <Xml Include="Assets\Levels\2.xml">
       <Filter>Source Files\XML</Filter>
     </Xml>
   </ItemGroup>
