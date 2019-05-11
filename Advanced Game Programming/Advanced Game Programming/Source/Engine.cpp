@@ -138,7 +138,7 @@ void Engine::update() {
 	}
 	tempObjects.erase(tempObjects.begin(), tempObjects.end());
 
-	int enemyCount = 0;
+	enemyCount = 0;
 
 	// Update each object in vector. Add new objects to tempObjects vector to be added
 	// to object vector in next cycle
@@ -174,12 +174,6 @@ void Engine::update() {
 	Position pos = gameLibrary->objects[0]->getComponent<BodyComponent>()->getPosition();
 	view->Update(pos);
 	gDevice->setView(view);
-
-	if (enemyCount == 0) {
-		gameLibrary->objects.clear();
-		loadLevel("Assets/levelTwo.xml");
-		std::cout << "Loading level 2";
-	}
 }
 
 // Draw the new position of each object to the screen
@@ -210,6 +204,13 @@ bool Engine::run() {
 	timer->fpsRegulate();
 	draw();
 	gDevice->Present();
+
+	if (enemyCount == 0) {
+		pDevice->resetWorld();
+		gameLibrary->objects.clear();
+		loadLevel("Assets/levelTwo.xml");
+		std::cout << "Loading level 2";
+	}
 
 	return true;
 }

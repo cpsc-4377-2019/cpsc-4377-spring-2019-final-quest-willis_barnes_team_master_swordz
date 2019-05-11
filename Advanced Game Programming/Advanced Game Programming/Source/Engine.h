@@ -39,7 +39,7 @@ public:
 	std::vector<std::unique_ptr<Object>> tempObjects;
 
 private:
-	int levelSwitchThreshold;
+	int enemyCount;
 };
 
 #endif

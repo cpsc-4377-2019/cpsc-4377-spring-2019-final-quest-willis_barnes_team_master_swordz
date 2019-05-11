@@ -442,3 +442,15 @@ b2Vec2 PhysicsDevice::normalize(b2Vec2 vec) {
 
 	return vec;
 }
+
+bool PhysicsDevice::resetWorld() {
+	world = nullptr;
+	Position grav;
+	grav.x = 0;
+	grav.y = 0;
+	world = std::make_unique<b2World>(GV2PV(grav));
+	c1 = std::make_unique<ContactListener>();
+	world->SetContactListener(c1.get());
+
+	return 0;
+}

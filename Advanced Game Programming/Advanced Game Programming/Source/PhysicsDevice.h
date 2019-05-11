@@ -39,6 +39,7 @@ public:
 	EngineFloat getAngle(const BodyComponent* object) const;
 	Position getVelocity(const BodyComponent* object) const;
 	Position getLinearVelocity(const BodyComponent* object) const;
+	bool resetWorld();
 
 private:
 
@@ -60,8 +61,6 @@ private:
 	std::unique_ptr<ContactListener> c1{ nullptr };
 	const b2Vec2 gravity{ 0,0 };
 	static const float fPRV;
-
-
 };
 
 #endif
