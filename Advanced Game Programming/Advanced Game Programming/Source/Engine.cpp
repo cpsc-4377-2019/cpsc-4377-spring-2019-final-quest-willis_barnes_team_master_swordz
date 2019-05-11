@@ -219,6 +219,12 @@ bool Engine::run() {
 		
 	}
 
+	if (gameLibrary->objects[0]->getType() != ObjectType::player) {
+		pDevice->resetWorld();
+		gameLibrary->objects.clear();
+		loadLevel("Assets/Levels/1.xml");
+		std::cout << "Player dead. Resetting\n";
+	}
 	return true;
 }
 

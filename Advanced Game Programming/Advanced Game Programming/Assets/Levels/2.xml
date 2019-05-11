@@ -6,6 +6,7 @@
     <Component type="sprite" name="player"/>
     <Component type="body" x="375" y="305" angle="0" bodytype="2"/>
     <Component type="input"/>
+    <Component type="health"/>
   </Object>
   <Object type="moblin">
     <Component type="sprite" name="moblin"/>
