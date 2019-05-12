@@ -170,7 +170,6 @@ void Engine::update() {
 			object++;
 		}
 	}
-
 	pDevice->update(1.0f / 60.0f);
 	//Update view based on player position
 	Position pos = gameLibrary->objects[0]->getComponent<BodyComponent>()->getPosition();
@@ -221,8 +220,10 @@ bool Engine::run() {
 
 	if (gameLibrary->objects[0]->getType() != ObjectType::player) {
 		pDevice->resetWorld();
+		tempObjects.clear();
 		gameLibrary->objects.clear();
 		loadLevel("Assets/Levels/1.xml");
+		levelCount = 1;
 		std::cout << "Player dead. Resetting\n";
 	}
 	return true;
